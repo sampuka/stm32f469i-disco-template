@@ -1,3 +1,4 @@
 [submodule "stm32f469i-disco-bsp"]
 	path = stm32f469i-disco-bsp
 	url = https://github.com/sampuka/stm32f469i-disco-bsp.git
+	branch = main
