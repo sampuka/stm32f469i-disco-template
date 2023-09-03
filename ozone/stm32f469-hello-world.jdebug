@@ -22,8 +22,8 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("C:/Users/Matdd/Programming/stm32f469-hal/ozone", "$(ProjectDir)");
-  Project.AddPathSubstitute ("c:/users/matdd/programming/stm32f469-hal/ozone", "$(ProjectDir)");
+  Project.AddPathSubstitute ("C:/Users/Matdd/Programming/stm32f469i-disco-template/ozone", "$(ProjectDir)");
+  Project.AddPathSubstitute ("c:/users/matdd/programming/stm32f469i-disco-template/ozone", "$(ProjectDir)");
   Project.SetDevice ("STM32F469NI");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
@@ -32,7 +32,7 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  File.Open ("C:/Users/Matdd/Programming/stm32f469-hal/build/hello-world.elf");
+  File.Open ("C:/Users/Matdd/Programming/stm32f469i-disco-template/build/hello-world.elf");
 }
 
 /*********************************************************************

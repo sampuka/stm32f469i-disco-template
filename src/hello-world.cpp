@@ -1,5 +1,5 @@
-#include "bsp/include/bsp_init.hpp"
-#include "bsp/include/bsp_leds.hpp"
+#include "bsp_init.hpp"
+#include "bsp_leds.hpp"
 
 #include <cstdint>
 
