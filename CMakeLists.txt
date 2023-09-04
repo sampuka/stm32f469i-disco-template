@@ -19,7 +19,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 add_subdirectory(stm32f469i-disco-bsp)
 
-file(GLOB_RECURSE HELLOWORLD_FILES REQUIRE_DEPENDS "src/*.hpp" "src/*.cpp" "startup.c")
+file(GLOB_RECURSE HELLOWORLD_FILES REQUIRE_DEPENDS "src/*.hpp" "src/*.cpp" "startup/startup.c")
 
 message(NOTICE "List of all sources: ${HELLOWORLD_FILES}")
 
