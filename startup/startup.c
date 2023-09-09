@@ -57,6 +57,43 @@ void *core_vector_table[16] __attribute__((section(".cortex_vectors"))) = {
 	&_end_stack, Reset_Handler, NMI_Handler, HardFault_Handler, MemManage_Handler, BusFault_Handler, UsageFault_Handler, 0, 0, 0, 0, SVC_Handler, DebugMon_Handler, 0, PendSV_Handler, SysTick_Handler,
 };
 
+void WWDG_Handler(void) ALIAS("Dummy_Handler");
+void PVD_Handler(void) ALIAS("Dummy_Handler");
+void TAMP_STAMP_Handler(void) ALIAS("Dummy_Handler");
+void RTC_WKUP_Handler(void) ALIAS("Dummy_Handler");
+void FLASH_Handler(void) ALIAS("Dummy_Handler");
+void RCC_Handler(void) ALIAS("Dummy_Handler");
+void EXTI0_Handler(void) ALIAS("Dummy_Handler");
+void EXTI1_Handler(void) ALIAS("Dummy_Handler");
+void EXTI2_Handler(void) ALIAS("Dummy_Handler");
+void EXTI3_Handler(void) ALIAS("Dummy_Handler");
+void EXTI4_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream0_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream1_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream2_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream3_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream4_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream5_Handler(void) ALIAS("Dummy_Handler");
+void DMA1_Stream6_Handler(void) ALIAS("Dummy_Handler");
+void ADC_Handler(void) ALIAS("Dummy_Handler");
+void CAN1_TX_Handler(void) ALIAS("Dummy_Handler");
+void CAN1_RX0_Handler(void) ALIAS("Dummy_Handler");
+void CAN1_RX1_Handler(void) ALIAS("Dummy_Handler");
+void CAN1_SCE_Handler(void) ALIAS("Dummy_Handler");
+void EXTI9_5_Handler(void) ALIAS("Dummy_Handler");
+void TIM1_BRK_TIM9_Handler(void) ALIAS("Dummy_Handler");
+void TIM1_UP_TIM10_Handler(void) ALIAS("Dummy_Handler");
+void TIM1_TRG_COM_TIM11_Handler(void) ALIAS("Dummy_Handler");
+void TIM1_CC_Handler(void) ALIAS("Dummy_Handler");
+void TIM2_Handler(void) ALIAS("Dummy_Handler");
+
+/* 16 standard Cortex-M vectors - these are present in every MCU */
+void *vendor_vector_table[29] __attribute__((section(".vendor_vectors"))) = {
+	WWDG_Handler,    PVD_Handler,     TAMP_STAMP_Handler,   RTC_WKUP_Handler,     FLASH_Handler,        RCC_Handler,          EXTI0_Handler,         EXTI1_Handler,         EXTI2_Handler,
+	EXTI3_Handler,   EXTI4_Handler,   DMA1_Stream0_Handler, DMA1_Stream1_Handler, DMA1_Stream2_Handler, DMA1_Stream3_Handler, DMA1_Stream4_Handler,  DMA1_Stream5_Handler,  DMA1_Stream6_Handler,
+	ADC_Handler,     CAN1_TX_Handler, CAN1_RX0_Handler,     CAN1_RX1_Handler,     CAN1_SCE_Handler,     EXTI9_5_Handler,      TIM1_BRK_TIM9_Handler, TIM1_UP_TIM10_Handler, TIM1_TRG_COM_TIM11_Handler,
+	TIM1_CC_Handler, TIM2_Handler};
+
 /* Based on http://sourceware.org/binutils/docs/ld/Output-Section-LMA.html */
 void Reset_Handler(void)
 {
