@@ -38,4 +38,6 @@ extern "C" void TIM2_Handler()
 {
 	state3 = !state3;
 	bsp::set_ld3(state3);
+
+	bsp::reset_tim2_interrupt();
 }
