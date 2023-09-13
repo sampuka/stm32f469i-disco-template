@@ -1,5 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
 
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+
+set(CMAKE_C_COMPILER arm-none-eabi-gcc)
+set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
+set(CMAKE_ASM_COMPILER arm-none-eabi-gcc)
+
+set(CMAKE_EXE_LINKER_FLAGS "--specs=nosys.specs -Wl,--no-warn-rwx-segment -Wl,-Map=main.map -Wl,--gc-sections --static -nostartfiles -L../stm32f469i-disco-bsp/stm32f469-hal/platform -Tstm32-biggest.ld" CACHE INTERNAL "")
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 project(
@@ -19,7 +33,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 add_subdirectory(stm32f469i-disco-bsp)
 
-file(GLOB_RECURSE HELLOWORLD_FILES REQUIRE_DEPENDS "src/*.hpp" "src/*.cpp" "startup/startup.c")
+file(GLOB_RECURSE HELLOWORLD_FILES REQUIRE_DEPENDS "src/*.hpp" "src/*.cpp")
 
 message(NOTICE "List of all sources: ${HELLOWORLD_FILES}")
 
