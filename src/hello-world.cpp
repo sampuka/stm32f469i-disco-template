@@ -1,4 +1,5 @@
 #include "bsp_core.hpp"
+#include "bsp_display.hpp"
 #include "bsp_init.hpp"
 #include "bsp_leds.hpp"
 
@@ -27,6 +28,10 @@ int main()
 	bsp::register_1ms_callback(toggle_ld3);
 
 	bsp::set_ld1(true);
+
+	bsp::Display display;
+
+	display.power_on();
 
 	while (1)
 	{
