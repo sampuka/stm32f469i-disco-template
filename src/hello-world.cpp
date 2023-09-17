@@ -1,5 +1,4 @@
 #include "bsp_core.hpp"
-#include "bsp_devtemp.hpp"
 #include "bsp_init.hpp"
 #include "bsp_leds.hpp"
 
