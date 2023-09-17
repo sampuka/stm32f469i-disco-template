@@ -4,23 +4,17 @@
 
 #include <cstdint>
 
-volatile uint32_t var = 0;
-volatile uint32_t var2 = 0;
-volatile uint32_t var3 = 0;
-volatile bool state = false;
-volatile bool state2 = false;
-volatile bool state3 = false;
-
 void toggle_ld3()
 {
 	static uint32_t counter = 0;
+	static bool ld3_state = false;
 
 	counter++;
 
 	if (counter == 1000)
 	{
-		state3 = !state3;
-		bsp::set_ld3(state3);
+		ld3_state = !ld3_state;
+		bsp::set_ld3(ld3_state);
 
 		counter = 0;
 	}
