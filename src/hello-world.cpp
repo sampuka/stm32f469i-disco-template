@@ -31,7 +31,7 @@ int main()
 
 	bsp::Display display;
 
-	display.power_on();
+	display.init();
 
 	while (1)
 	{
